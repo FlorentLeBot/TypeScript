@@ -1,3 +1,4 @@
+"use strict";
 // // les variables
 // let myVariable;
 // myVariable = "Flo";
@@ -57,6 +58,19 @@
 //   hobbies: ['cross', 'informatique', 'lire']
 // }
 // // le Typeof et le type 'never'
-var value = 30;
+let value = "30";
 if (typeof value == "number")
     console.log("Value est un nombre !");
+function foo(x) {
+    if (typeof x === "string") {
+        return true;
+    }
+    else if (typeof x == "number") {
+        return false;
+    }
+    return fail("x n'est ni un 'string' ni un 'number'");
+}
+foo("number");
+function fail(message) {
+    throw new Error(message);
+}
