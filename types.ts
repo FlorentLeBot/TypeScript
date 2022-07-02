@@ -83,20 +83,73 @@
 
 // // le Typeof et le type 'never'
 
-let value = "30";
-if (typeof value == "number") console.log("Value est un nombre !");
+// let value = "30";
+// if (typeof value == "number") console.log("Value est un nombre !");
 
-function foo(x: string | number) : boolean {
-  if(typeof x === "string" ){
-    return true;
-  }else if (typeof x == "number"){
-    return false;
-  }
-  return fail("x n'est ni un 'string' ni un 'number'");
+// function foo(x: string | number) : boolean {
+//   if(typeof x === "string" ){
+//     return true;
+//   }else if (typeof x == "number"){
+//     return false;
+//   }
+//   return fail("x n'est ni un 'string' ni un 'number'");
+// }
+
+// foo("number");
+
+// function fail(message: string) : never {
+//   throw new Error(message);
+// }
+
+// Une interface : un contrat pour nos objet
+
+interface Person{
+    name: string;
+    age: number;
+    gender: string;   
 }
 
-foo("number");
-
-function fail(message: string) : never {
-  throw new Error(message);
+const me: Person = {
+  name: "Flo",
+  age: 35,
+  gender: "homme"
 }
+
+function hello(person: Person){
+  console.log(`Bonjour ${person.name} et tu as ${person.age} ans.`);
+}
+hello(me);
+
+// Key? et readonly
+
+// readonly : la propriété e peut pas être modifiée
+
+// ? : la propriété est optionnelle
+
+interface IUserProfile {
+  firstname: string;
+  lastname?: string;
+  age?: number; 
+  readonly password: string;
+}
+
+const user1: IUserProfile = {
+  firstname: "Florent",
+  lastname: "Le Bot",
+  // age: 35,
+  password: "azerty"
+}
+
+console.log(user1);
+
+// l'héritage dans les interfaces
+
+interface IAdvancedUserProfile extends IUserProfile {
+  hobbies: string[];
+  color?: string;
+}
+
+const user2 = <IAdvancedUserProfile>{};
+user2.firstname = "Justine";
+
+console.log(user2);
