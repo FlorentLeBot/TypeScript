@@ -249,8 +249,8 @@
 // }
 // const user1 = new AdvanceUserProfile("Flo", 35, ["Lire", "Cross"], "bleu");
 // console.log(user1.name, user1.hobbies);
-// Implémenter une interface
-// code plus court
+// // Implémenter une interface
+// // code plus court
 // interface UserProfile {
 //   name: string;
 //   age: number;
@@ -259,4 +259,23 @@
 //   constructor(public name: string, public age: number, public color: string) {}
 // }
 // const user1 = new AdvanceUserProfile("Flo", 35, "bleu");
-// Node : runtime environment (permet d'exécuter du javascipt en dehors du navigateur, du côté serveur, npm init -y -> "package.json")
+
+// // Node : runtime environment (permet d'exécuter du javascipt en dehors du navigateur, du côté serveur, npm init -y -> "package.json")
+
+// // les namespaces
+
+// /// <reference path="math.ts" />
+
+// console.log(MathFunctions.addition(9, 7));
+// console.log(MathFunctions.multiplication(9, 7));
+
+// Les modules
+
+import * as MathFunctions from "./math";
+// ou
+// import { add } from "./math"; // pour l'addition avec l'alias add
+
+console.log(MathFunctions.add(10, 7));
+console.log(MathFunctions.multiplication(10, 7));
+
+// Les modules dans le navigateur
