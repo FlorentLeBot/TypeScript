@@ -269,13 +269,87 @@
 // console.log(MathFunctions.addition(9, 7));
 // console.log(MathFunctions.multiplication(9, 7));
 
-// Les modules
+// // Les modules
 
-import * as MathFunctions from "./math";
-// ou
-// import { add } from "./math"; // pour l'addition avec l'alias add
+// import * as MathFunctions from "./math";
+// // ou
+// // import { add } from "./math"; // pour l'addition avec l'alias add
 
-console.log(MathFunctions.add(10, 7));
-console.log(MathFunctions.multiplication(10, 7));
+// console.log(MathFunctions.add(10, 7));
+// console.log(MathFunctions.multiplication(10, 7));
 
-// Les modules dans le navigateur
+// // les Generics : travailler avec plusieurs type de données
+
+// function generics<T>(data: T) {
+//   return data;
+// }
+
+// console.log(generics<number>(3));
+// console.log(generics<string>("hello"));
+
+// const myArray: Array<number> = [1, 2, 3];
+// myArray.push(4);
+// console.log(myArray);
+
+// class MathFunctions<T> {
+//   add: (x: T, y: T) => T;
+//   sub: (x: T, y: T) => T;
+// }
+
+// let myTotal = new MathFunctions<number>();
+// myTotal.add = (x, y) => x + y;
+// myTotal.sub = (x, y) => x - y;
+
+// console.log(myTotal.add(5, 5));
+// console.log(myTotal.sub(5, 9.5));
+
+// // Constraints
+
+// class MathFunctions<T extends number, U extends number, V extends string> {
+//   x: T;
+//   y: U;
+//   s: V;
+//   add(): number {
+//     return this.x + this.y;
+//   }
+//   sub(): number {
+//     return this.x - this.y;
+//   }
+// }
+// let myTotal = new MathFunctions<number, number, string>();
+// myTotal.x = 10;
+// myTotal.y = 5;
+// console.log(myTotal.add());
+// console.log(myTotal.sub());
+
+// // Decorators
+
+// function logConstruct(constructorFunction: Function) {
+//   console.log(constructorFunction);
+// }
+
+// @logConstruct
+// class Identity {
+//   constructor() {
+//     console.log("Flo");
+//   }
+// }
+
+// function printProperties(properties: Function) {
+//   properties.prototype.print = function () {
+//     console.log(this);
+//   };
+// }
+
+// @printProperties
+// class Games {
+//   rts = "C&C";
+//   rpg = "WoW";
+// }
+
+// const game = new Games();
+// (<any>game).print();
+
+// Gult : automatiser des tâches
+
+

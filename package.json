@@ -2,9 +2,9 @@
   "name": "typescript",
   "version": "1.0.0",
   "description": "test cda typescript",
-  "main": "./dist/types.js",
+  "main": "./dist/song.js",
   "scripts": {
-    "start": "node ./dist/types.js"
+    "start": "node ./dist/song.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/FlorentLeBot/TypeScript/issues"
   },
-  "homepage": "https://github.com/FlorentLeBot/TypeScript#readme"
+  "homepage": "https://github.com/FlorentLeBot/TypeScript#readme",
+  "dependencies": {
+    "systemjs": "^0.21.5"
+  }
 }
